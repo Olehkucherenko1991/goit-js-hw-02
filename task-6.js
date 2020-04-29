@@ -1,28 +1,27 @@
-
+let input;
 const numbers = [];
 let total = 0;
 
-const inputAnumber = function (items) {
-  do {
-    let input = prompt("Введите любое число!");
+do {
+  let input = prompt("Введите любое число!");
 
-    
+  const notANumber = Number.isNaN(input);
 
-    input = Number(input);
+  if (notANumber) {
+    alert("Было введено не число, попробуйте еще раз");
+    continue;
+  } else if (input === null) {
+    break;
+  }
 
-    for (let numbers of number) {
-        numbers.push(`numbers: ${i}`);
-        const notANumber = Number.isNaN(input);
-    if (notANumber) {
-      alert("Было введено не число, попробуйте еще раз");
-      continue;
-    }
-    if (input === null) {
-        break;
-      }  
-    }
-    total += input;
-};
+  numbers.push(Number(input));
+} while (true);
+
+if (numbers.length === 0) {
+  for (let number of numbers) {
+    total += number;
+  }
+}
 
 alert(`Общая сумма чисел равна ${total}`);
 console.log(`Общая сумма чисел равна ${total}`);
